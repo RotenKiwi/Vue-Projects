@@ -9,7 +9,10 @@
 <body>
     <div id="app">
         <h1>{{ name }}</h1>
-    <p>{{ description }}</p></div>
+    <p>{{ description }}</p>
+    <p v-if="condition=true"> true </p>
+    <p v-else-if="condition=false"> false </p>
+    <p v-else> neither true nor false </p></div>
 
     <script>
         var app = new Vue({
@@ -17,6 +20,7 @@
             data: {
                 name: "Vue Hero",
                 description: "desc",
+                condition: true,
             }
         })
     </script>
