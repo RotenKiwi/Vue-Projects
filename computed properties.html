@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Getting Started</title>
+        <script src="https://unpkg.com/vue"></script>
+        
+    </head>
+<body>
+    <div id="app">
+        <div id="tags" v-for="things in things">
+            {{ things.title }}
+        </div>
+
+    </div>
+    <script>
+        var app=new Vue({
+            el:"#app",
+            data:{
+                things:[
+                    {"id":1, "title": "thing 1"},
+                    {"id":2, "title": "thing 2"},
+                    {"id":3, "title": "thing 3"},
+                ]},
+        })
+    </script>
+</body>
+</html>
