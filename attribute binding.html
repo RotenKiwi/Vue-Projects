@@ -9,13 +9,15 @@
 <body>
     <div id="app">
         <a v-bind:href="link">Binded Link</a>
+        <img :src="image">
 
     </div>
     <script>
         var app=new Vue({
             el:"#app",
             data:{
-                link: "https://pokemonshowdown.com",
+                link: "https://pokemonshowdown.com", //anytime 'link' will be used, it will use this value
+                image: "/home/rotenkiwi/Downloads/Lone Samurai.jLopeg"
             }
         })
     </script>
