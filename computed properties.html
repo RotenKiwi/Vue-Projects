@@ -8,6 +8,7 @@
     </head>
 <body>
     <div id="app">
+        {{numberofthings}}
         <div id="tags" v-for="things in things">
             {{ things.title }}
         </div>
@@ -22,6 +23,11 @@
                     {"id":2, "title": "thing 2"},
                     {"id":3, "title": "thing 3"},
                 ]},
+            computed: {
+                numberofthings(){
+                    return 'number of things: '+this.things.length
+                }
+            }
         })
     </script>
 </body>
