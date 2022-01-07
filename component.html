@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Getting Started</title>
+        <script src="https://unpkg.com/vue"></script>
+        
+    </head>
+<body>
+    <div id="app">
+        <card-image :image="image"></card-image>
+        {{numberofthings}}
+        <div id="tags" v-for="things in things">
+            {{ things.title }}
+        </div>
+
+    </div>
+    <script>
+        Vue.component('card-image', {
+            props:{
+                image: String
+            },
+            template: `<div class="card-image">
+                        <div class="image is-4by3">
+                            <img :src="image"></div></div>`
+        })
+
+        var app=new Vue({
+            el:"#app",
+            data:{
+                image: "/home/rotenkiwi/Downloads/Lone Samurai.jLopeg",
+                things:[
+                    {"id":1, "title": "thing 1"},
+                    {"id":2, "title": "thing 2"},
+                    {"id":3, "title": "thing 3"},
+                ]},
+            computed: {
+                numberofthings(){
+                    return 'number of things: '+this.things.length
+                }
+            }
+        })
+    </script>
+</body>
+</html>
