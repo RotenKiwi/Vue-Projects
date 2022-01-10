@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Getting Started</title>
+        <script src="https://unpkg.com/vue"></script>
+        
+    </head>
+<body>
+    <div id="app">
+        <h1>{{ name }}</h1>
+    <p>{{ description }}</p>
+
+    <div class="right">
+        <div class="field">
+            <div class="control">
+                <label>Name</label><br>  
+                <input class="input" v-model="name">     
+            </div> 
+        </div>
+        <div class="field">
+            <div class="control">
+                <label>description</label><br>
+                <input class="input" v-model="description">    
+            </div>
+        </div>
+    <add-interest></add-interest>
+    </div>
+
+    <script>
+        Vue.component('add-intereset',{
+            template:`<div class="grouped"> 
+            <div class="control">
+            <input v-model="interest" class="input">
+            </div>
+            <div class="control">
+            <button @click="addintereset" class="button">Add</button>
+            </div></div>`
+        })
+        var app = new Vue({
+            el: '#app',
+            data: {
+                name: "Vue Hero",
+                description: "desc",
+            }
+        })
+    </script>
+</body>
+</html>
