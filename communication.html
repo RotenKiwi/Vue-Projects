@@ -24,7 +24,7 @@
                 <input class="input" v-model="description">    
             </div>
         </div>
-    <add-interest></add-interest>
+    <add-interest @change="addintereset"></add-interest>
     </div>
 
     <script>
@@ -35,7 +35,12 @@
             </div>
             <div class="control">
             <button @click="addintereset" class="button">Add</button>
-            </div></div>`
+            </div></div>`,
+            methods: {
+                addintereset(){
+                    this.$emit('change', this.interest)
+                }
+            }
         })
         var app = new Vue({
             el: '#app',
